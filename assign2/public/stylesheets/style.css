@@ -1,8 +1,40 @@
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+.tweets {
+  width: 568px;
+}
+
+.tweets:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tweets .first_line p {
+  display: inline;
+  margin: 1px;
+}
+
+.tweets .name {
+  color: black;
+  font-weight: bold;
+}
+
+.tweets .name:hover {
+  text-decoration: underline;
+}
+
+.tweets .screen_name,
+.tweets .time {
+  color: rgb(101, 119, 134);
+}
+
+.tweets .text {
+  overflow-wrap: break-word;
 }
