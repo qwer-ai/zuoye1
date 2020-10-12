@@ -14,15 +14,6 @@ const client = new twitter({
 
 console.log(client);
 
-client.stream('statuses/filter', {track: 'twitter'},  function(stream) {
-  stream.on('data', function(tweet) {
-    console.log(tweet.text);
-  });
-
-  stream.on('error', function(error) {
-    console.log(error);
-  });
-});
 
 client.get('search/tweets', {q: 'node.js'}, function(error, tweets, response) {
   console.log('1');
