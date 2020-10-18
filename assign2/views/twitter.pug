@@ -1,12 +1,10 @@
 extends layout
 
 block content
-    h1= `${title} - ${keyword}`
+    //- h1= `${title} - ${keyword}`
+    h1= title
     each i in data
         div.tweets
             div.first_line
-                a(href=`https://twitter.com/${i.user.screen_name}`)
-                    p.name=i.user.name
-                    p.screen_name='@'+i.user.screen_name
-                p.time= ' · ' + i.created_at.split(" +")[0]
-            p.text=i.text
+                a(href="/twitter/stream?q=" + i.query class='info1' target='_blank')
+                    p.name=i.name
