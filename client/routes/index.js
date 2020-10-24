@@ -13,7 +13,7 @@ const client = new Twitter({
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   client.get('trends/place', { id: '23424748' }, function (error, trends, response) {
     if (!error) {
       // console.log(trends[0].trends);
@@ -31,16 +31,16 @@ router.get('/', function(req, res, next) {
 
 const bucketName = 'n10129375-wikipedia-store';
 
-router.get('/twitter', function(req, res, next) {
+router.get('/twitter', function (req, res, next) {
   const params = { Bucket: bucketName, Key: 'twitter-ps5.json' };
 
   new AWS.S3({ apiVersion: '2006-03-01' }).getObject(params, (err, result) => {
-      if(result){
-        const resultJSON = JSON.parse(result.Body);
-        const responseJSON = resultJSON.value;
-        var TweetInfo = Object.entries(responseJSON);
-        res.render('twitterAnalysis', {TweetInfo});
-      }
+    if (result) {
+      const resultJSON = JSON.parse(result.Body);
+      const responseJSON = resultJSON.value;
+      var TweetInfo = Object.entries(responseJSON);
+      res.render('twitterAnalysis', { TweetInfo });
+    }
   });
 });
 

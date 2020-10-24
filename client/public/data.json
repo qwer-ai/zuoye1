@@ -1,151 +1,103 @@
 [
     {
-        "categorie": "Student", 
+        "tag": "TagName1", 
         "values": [
             {
-                "value": 0, 
-                "rate": "Not at all"
+                "value": 10, 
+                "rate": "Positive"
             }, 
             {
                 "value": 4, 
-                "rate": "Not very much"
+                "rate": "Neutral"
             }, 
             {
                 "value": 12, 
-                "rate": "Medium"
-            }, 
-            {
-                "value": 6, 
-                "rate": "Very much"
-            }, 
-            {
-                "value": 0, 
-                "rate": "Tremendously"
+                "rate": "Negative"
             }
         ]
     }, 
     {
-        "categorie": "Liberal Profession", 
+        "tag": "TagName2", 
         "values": [
             {
                 "value": 1, 
-                "rate": "Not at all"
+                "rate": "Positive"
             }, 
             {
                 "value": 21, 
-                "rate": "Not very much"
+                "rate": "Neutral"
             }, 
             {
                 "value": 13, 
-                "rate": "Medium"
-            }, 
-            {
-                "value": 18, 
-                "rate": "Very much"
-            }, 
-            {
-                "value": 6, 
-                "rate": "Tremendously"
+                "rate": "Negative"
             }
         ]
     }, 
     {
-        "categorie": "Salaried Staff", 
+        "tag": "TagName3", 
         "values": [
             {
                 "value": 3, 
-                "rate": "Not at all"
+                "rate": "Positive"
             }, 
             {
                 "value": 22, 
-                "rate": "Not very much"
+                "rate": "Neutral"
             }, 
             {
                 "value": 6, 
-                "rate": "Medium"
-            }, 
-            {
-                "value": 15, 
-                "rate": "Very much"
-            }, 
-            {
-                "value": 3, 
-                "rate": "Tremendously"
+                "rate": "Negative"
             }
         ]
     }, 
     {
-        "categorie": "Employee", 
+        "tag": "TagName4", 
         "values": [
             {
                 "value": 12, 
-                "rate": "Not at all"
+                "rate": "Positive"
             }, 
             {
                 "value": 7, 
-                "rate": "Not very much"
+                "rate": "Neutral"
             }, 
             {
                 "value": 18, 
-                "rate": "Medium"
-            }, 
-            {
-                "value": 13, 
-                "rate": "Very much"
-            }, 
-            {
-                "value": 6, 
-                "rate": "Tremendously"
+                "rate": "Negative"
             }
         ]
     }, 
     {
-        "categorie": "Craftsman", 
+        "tag": "TagName5", 
         "values": [
             {
                 "value": 6, 
-                "rate": "Not at all"
+                "rate": "Positive"
             }, 
             {
                 "value": 15, 
-                "rate": "Not very much"
+                "rate": "Neutral"
             }, 
             {
                 "value": 9, 
-                "rate": "Medium"
-            }, 
-            {
-                "value": 12, 
-                "rate": "Very much"
-            }, 
-            {
-                "value": 3, 
-                "rate": "Tremendously"
+                "rate": "Negative"
             }
         ]
     }, 
     {
-        "categorie": "Inactive", 
+        "tag": "TagName6", 
         "values": [
             {
                 "value": 6, 
-                "rate": "Not at all"
+                "rate": "Positive"
             }, 
             {
                 "value": 6, 
-                "rate": "Not very much"
+                "rate": "Neutral"
             }, 
             {
                 "value": 6, 
-                "rate": "Medium"
-            }, 
-            {
-                "value": 2, 
-                "rate": "Very much"
-            }, 
-            {
-                "value": 3, 
-                "rate": "Tremendously"
+                "rate": "Negative"
             }
         ]
     }
