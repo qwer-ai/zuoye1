@@ -1,6 +1,14 @@
 extends layout
 
 block content
+    
+    .container1
+        .row
+            .col-md-12-page2
+                .input-group-page2.input-group-lg
+                    input#searchInput.form-control(type='text' placeholder='Enter keywords...')
+                    span.input-group-btn
+                        button.btn.btn-primary(onclick='' type='button') Start
 
     #tweetAnalysis-section
         .sentiment-title
@@ -9,6 +17,8 @@ block content
             .sentiment-chart
                 #chart_container
                     #chart
+    .clear-chart
+        button.button-clear( type='button') clear chart
 
     section#tweet.text-dark
         .container

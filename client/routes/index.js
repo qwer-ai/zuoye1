@@ -31,6 +31,23 @@ router.get('/', function (req, res, next) {
 
 const bucketName = 'n10129375-wikipedia-store';
 
+
+router.post('/update', function(req, res, next){
+  const params = { Bucket: bucketName, Key: `twitter-${req.body.value}.json` };
+
+  new AWS.S3({ apiVersion: '2006-03-01' }).getObject(params, (err, result) => {
+    if (result) {
+      const resultJSON = JSON.parse(result.Body);
+      const responseJSON = resultJSON.value;
+      var TweetInfo = Object.entries(responseJSON);
+      console.log(TweetInfo);
+      res.render('twitterAnalysis', { TweetInfo });
+    }
+  });
+});
+
+
+
 router.get('/twitter', function (req, res, next) {
   const params = { Bucket: bucketName, Key: 'twitter-ps5.json' };
 

@@ -15,6 +15,15 @@ a {
   margin-top: 150px;
 }
 
+.input-group-page2{
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 750px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
 .card {
   margin-left: 28px;
   margin-right: 28px;
@@ -36,4 +45,23 @@ h4 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
+}
+
+.clear-chart{
+  padding-left: 230px;
+  padding-bottom: 20px;
+}
+.button-clear{
+  background-color: #4CAF50;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.col-md-12-page2{
+  padding-left: 350px;
 }
