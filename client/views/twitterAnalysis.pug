@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+    #tweetAnalysis-section
+        .sentiment-title
+            h4
+                strong Sentiment Chart
+            .sentiment-chart
+                #chart_container
+                    #chart
+
+    section#tweet.text-dark
+        .container
+            .row
+                .col-lg-12.mx-auto
+                    .card.text-dark
+                        .card-header.text-center
+                            b Twitter Stream
+                        .card-body
+                            #tweetTiles.row
+                                each infomation in TweetInfo
+                                    .card(style='width: 18rem;')
+                                        .card-body
+                                            h5.card-title= infomation[1].name
+                                            if infomation[1].sentiment==1
+                                                span.sentiment-score(style='background-color: #228b22; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;') positive
+                                            else if infomation[1].sentiment==0
+                                                span.sentiment-score(style='background-color: #ffff66; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;') neutral
+                                            else
+                                                span.sentiment-score(style='background-color: #FF0000; display: inline-block; padding: 3px 10px; font-weight: bold; border-radius: 5px;') negitive
+                                            h6.card-subtitle.mb-2.text-muted= "@" + infomation[1].screen_name
+                                            p.card-text= infomation[1].text
+                            
+    script(type= 'text/javascript',src="./javascripts/chart.js")
