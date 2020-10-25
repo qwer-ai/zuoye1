@@ -8,16 +8,19 @@ const analyzer = require('natural').SentimentAnalyzer;
 const stemmer = require('natural').PorterStemmer;
 
 // Create unique bucket name
-const bucketName = 'n10127135-wikipedia-store';
+const bucketName = 'cab432-twitter-assign2-store';
 
 const router = express.Router();
 
 // Init redis
-const redisClient = redis.createClient();
+const redisClient = redis.createClient({ port: 6379, host: "cab432twitterassign2.km2jzi.ng.0001.apse2.cache.amazonaws.com" });
+// const redisClient = redis.createClient(); 
 
 redisClient.on('error', (err) => {
     console.log("Error " + err);
 });
+
+const S3 = new AWS.S3({ apiVersion: '2006-03-01' });
 
 const sentimentAnalyzer = new analyzer("English", stemmer, "afinn");
 
@@ -49,7 +52,9 @@ router.post("/store", (req, res) => {
         res.send(tweetObj);
         res.end();
     } catch (err) {
-        console.error(err);
+        res.status(500);
+        res.send(err);
+        res.end();
     }
 
 });
@@ -73,7 +78,7 @@ function addRedis(query, id, tweet) {
             data.value = { ...resultJSON.value, ...data.value };
             redisClient.setex(key, 3600, JSON.stringify(data));
         } else {
-            new AWS.S3({ apiVersion: '2006-03-01' }).getObject(params, (err, result) => {
+            S3.getObject(params, (err, result) => {
                 if (result) {
                     let resultJSON = JSON.parse(result.Body);
                     data.value = { ...resultJSON.value, ...data.value };
@@ -91,16 +96,14 @@ function addS3(query, id, tweet) {
     let data = { source: 'S3 Bucket', value: {} };
     data.value[id] = tweet;
 
-    new AWS.S3({ apiVersion: '2006-03-01' }).getObject(params, (err, result) => {
+    S3.getObject(params, (err, result) => {
         if (result) {
             const resultJSON = JSON.parse(result.Body);
             data.value = { ...resultJSON.value, ...data.value };
         }
 
         const objectParams = { ...params, Body: JSON.stringify(data) };
-        const uploadPromise = new AWS.S3({ apiVersion: '2006-03-01' }).putObject(objectParams).promise();
-        uploadPromise.then(function (data) {
-        });
+        S3.putObject(objectParams);
     });
 }
 
